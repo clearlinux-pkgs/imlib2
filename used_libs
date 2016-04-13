@@ -1,0 +1,11 @@
+libX11.so.6
+libXext.so.6
+libbz2.so.0
+libc.so.6
+libdl.so.2
+libfreetype.so.6
+libjpeg.so.62
+libm.so.6
+libpng16.so.16
+libtiff.so.5
+libz.so.1
