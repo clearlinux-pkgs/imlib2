@@ -4,7 +4,7 @@
 #
 Name     : imlib2
 Version  : 1.4.8
-Release  : 1
+Release  : 2
 URL      : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.4.8/imlib2-1.4.8.tar.bz2
 Source0  : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.4.8/imlib2-1.4.8.tar.bz2
 Summary  : Powerful image loading and rendering library
@@ -20,7 +20,6 @@ BuildRequires : pkgconfig(ice)
 BuildRequires : pkgconfig(libpng)
 BuildRequires : pkgconfig(x11)
 BuildRequires : pkgconfig(xext)
-BuildRequires : tiff-dev
 
 %description
 Imlib2 is an advanced replacement library for libraries like libXpm that
@@ -67,17 +66,16 @@ lib components for the imlib2 package.
 
 
 %prep
-cd ..
 %setup -q -n imlib2-1.4.8
 
 %build
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -flto -O3 -falign-functions=32 -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -flto -O3 -falign-functions=32 -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -flto -O3 -falign-functions=32 -fno-semantic-interposition "
-export CXXFLAGS="$CXXFLAGS -flto -O3 -falign-functions=32 -fno-semantic-interposition "
+export CFLAGS="$CFLAGS -falign-functions=32 -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$CFLAGS -falign-functions=32 -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$CFLAGS -falign-functions=32 -O3 -flto -fno-semantic-interposition "
+export CXXFLAGS="$CXXFLAGS -falign-functions=32 -O3 -flto -fno-semantic-interposition "
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
@@ -152,6 +150,5 @@ rm -rf %{buildroot}
 /usr/lib64/imlib2/loaders/png.so
 /usr/lib64/imlib2/loaders/pnm.so
 /usr/lib64/imlib2/loaders/tga.so
-/usr/lib64/imlib2/loaders/tiff.so
 /usr/lib64/imlib2/loaders/xpm.so
 /usr/lib64/imlib2/loaders/zlib.so
