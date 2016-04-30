@@ -4,7 +4,7 @@
 #
 Name     : imlib2
 Version  : 1.4.8
-Release  : 3
+Release  : 4
 URL      : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.4.8/imlib2-1.4.8.tar.bz2
 Source0  : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.4.8/imlib2-1.4.8.tar.bz2
 Summary  : Powerful image loading and rendering library
