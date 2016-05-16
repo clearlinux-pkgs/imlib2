@@ -4,7 +4,7 @@
 #
 Name     : imlib2
 Version  : 1.4.9
-Release  : 5
+Release  : 6
 URL      : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.4.9/imlib2-1.4.9.tar.bz2
 Source0  : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.4.9/imlib2-1.4.9.tar.bz2
 Summary  : Powerful image loading and rendering library
@@ -72,10 +72,10 @@ lib components for the imlib2 package.
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition -falign-functions=32 "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition -falign-functions=32 "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition -falign-functions=32 "
-export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition -falign-functions=32 "
+export CFLAGS="$CFLAGS -falign-functions=32 -flto -O3 -fno-semantic-interposition "
+export FCFLAGS="$CFLAGS -falign-functions=32 -flto -O3 -fno-semantic-interposition "
+export FFLAGS="$CFLAGS -falign-functions=32 -flto -O3 -fno-semantic-interposition "
+export CXXFLAGS="$CXXFLAGS -falign-functions=32 -flto -O3 -fno-semantic-interposition "
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
