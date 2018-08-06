@@ -1,3 +1,4 @@
+libX11-xcb.so.1
 libX11.so.6
 libXext.so.6
 libbz2.so.0
@@ -7,4 +8,6 @@ libfreetype.so.6
 libjpeg.so.62
 libm.so.6
 libpng16.so.16
+libxcb-shm.so.0
+libxcb.so.1
 libz.so.1

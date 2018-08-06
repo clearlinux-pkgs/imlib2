@@ -1,11 +1,63 @@
 
 ***
+*** Version 1.5.1 ***
+***
+
+Kim Woelders (13):
+      Fix build without HAVE_X11_SHM_FD (T6752)
+      XPM loader: Fix potential use of uninitialized value (T6746)
+      BMP loader: Fix infinite loop with invalid bmp images (T6749)
+      PNM loader: Simplify (fixing ASCII format parsing issues T6751)
+      BMP loader: Fix warnings found with -O3
+      Maximum image dimension should be 32767, not 32766
+      PNG loader: Correct various error handling cases
+      Add missing const to imlib_apply_filter() script argument
+      Warning fixes in imlib2_... programs
+      imlib2_view: Limit window dimensions to 32767
+      grab.c: Fix gcc8 warning
+      imlib2_conv.c: Fix gcc8 warning
+      1.5.1.
+
+
+***
+*** Version 1.5.0 ***
+***
+
+Alexander Volkov (3):
+      put a check for shared memory inside __imlib_ShmGetXImage()
+      introduce __imlib_ShmDestroyXImage() instead of __imlib_ShmDetach()
+      Add support for MIT-SHM FD-passing
+
+Kim Woelders (19):
+      XPM loader: Fix incorrect image invalidation.
+      Make some more functions static.
+      Introduce __imlib_LoadImageData()
+      Remove redundant CAST_IMAGE()
+      imlib2_grab: Always use imlib_create_scaled_image_from_drawable() to grab image
+      imlib_create_scaled_image_from_drawable(): speed up 1:1 case
+      imlib_create_scaled_image_from_drawable(): Drop shape handling if unshaped
+      Indent
+      Autofoo cosmetics
+      Strip trailing whitespace, cosmetics
+      Fix potential OOB memory access if border elements are negative
+      Fix potential OOB memory access if border sizes exceed image dimensions
+      Introduce IMLIB2_SHM_OPT to enable overriding/testing SHM modes
+      Add IMLIB2_XIMAGE_CACHE_COUNT to enable testing the ximage cache
+      Refactor the XImage cache
+      Add imlib_get_cache_used()
+      Expose XImage cache control functions
+      Drop -Waggregate-return
+      1.5.0.
+
+
+***
 *** Version 1.4.10 ***
 ***
 
-Kim Woelders (2):
+Kim Woelders (3):
       PNM loader: Fix reading PNM bitmaps.
       Fix missing break.
+      1.4.10.
 
 Tobias Stoeckmann (3):
       Avoid out of boundary operations while parsing xpm
