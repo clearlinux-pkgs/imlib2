@@ -4,16 +4,16 @@
 #
 Name     : imlib2
 Version  : 1.5.1
-Release  : 10
+Release  : 11
 URL      : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.5.1/imlib2-1.5.1.tar.bz2
 Source0  : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.5.1/imlib2-1.5.1.tar.bz2
 Summary  : Powerful image loading and rendering library
 Group    : Development/Tools
 License  : Imlib2
-Requires: imlib2-bin
-Requires: imlib2-lib
-Requires: imlib2-license
-Requires: imlib2-data
+Requires: imlib2-bin = %{version}-%{release}
+Requires: imlib2-data = %{version}-%{release}
+Requires: imlib2-lib = %{version}-%{release}
+Requires: imlib2-license = %{version}-%{release}
 BuildRequires : bzip2-dev
 BuildRequires : libjpeg-turbo-dev
 BuildRequires : pkgconfig(freetype2)
@@ -34,8 +34,8 @@ rendering and blending, dynamic binary filters, scripting, and more.
 %package bin
 Summary: bin components for the imlib2 package.
 Group: Binaries
-Requires: imlib2-data
-Requires: imlib2-license
+Requires: imlib2-data = %{version}-%{release}
+Requires: imlib2-license = %{version}-%{release}
 
 %description bin
 bin components for the imlib2 package.
@@ -52,10 +52,11 @@ data components for the imlib2 package.
 %package dev
 Summary: dev components for the imlib2 package.
 Group: Development
-Requires: imlib2-lib
-Requires: imlib2-bin
-Requires: imlib2-data
-Provides: imlib2-devel
+Requires: imlib2-lib = %{version}-%{release}
+Requires: imlib2-bin = %{version}-%{release}
+Requires: imlib2-data = %{version}-%{release}
+Provides: imlib2-devel = %{version}-%{release}
+Requires: imlib2 = %{version}-%{release}
 
 %description dev
 dev components for the imlib2 package.
@@ -64,8 +65,8 @@ dev components for the imlib2 package.
 %package lib
 Summary: lib components for the imlib2 package.
 Group: Libraries
-Requires: imlib2-data
-Requires: imlib2-license
+Requires: imlib2-data = %{version}-%{release}
+Requires: imlib2-license = %{version}-%{release}
 
 %description lib
 lib components for the imlib2 package.
@@ -86,27 +87,31 @@ license components for the imlib2 package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1533593738
-export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export FFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1568074182
+export GCC_IGNORE_WERROR=1
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export FFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1533593738
+export SOURCE_DATE_EPOCH=1568074182
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/imlib2
-cp COPYING %{buildroot}/usr/share/doc/imlib2/COPYING
+mkdir -p %{buildroot}/usr/share/package-licenses/imlib2
+cp COPYING %{buildroot}/usr/share/package-licenses/imlib2/COPYING
 %make_install
 
 %files
@@ -151,7 +156,7 @@ cp COPYING %{buildroot}/usr/share/doc/imlib2/COPYING
 
 %files dev
 %defattr(-,root,root,-)
-/usr/include/*.h
+/usr/include/Imlib2.h
 /usr/lib64/libImlib2.so
 /usr/lib64/pkgconfig/imlib2.pc
 
@@ -175,5 +180,5 @@ cp COPYING %{buildroot}/usr/share/doc/imlib2/COPYING
 /usr/lib64/libImlib2.so.1.5.1
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/imlib2/COPYING
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/imlib2/COPYING
