@@ -4,7 +4,7 @@
 #
 Name     : imlib2
 Version  : 1.5.1
-Release  : 12
+Release  : 13
 URL      : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.5.1/imlib2-1.5.1.tar.bz2
 Source0  : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.5.1/imlib2-1.5.1.tar.bz2
 Summary  : Powerful image loading and rendering library
