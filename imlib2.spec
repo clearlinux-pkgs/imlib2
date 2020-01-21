@@ -4,7 +4,7 @@
 #
 Name     : imlib2
 Version  : 1.5.1
-Release  : 13
+Release  : 14
 URL      : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.5.1/imlib2-1.5.1.tar.bz2
 Source0  : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.5.1/imlib2-1.5.1.tar.bz2
 Summary  : Powerful image loading and rendering library
@@ -15,6 +15,7 @@ Requires: imlib2-data = %{version}-%{release}
 Requires: imlib2-lib = %{version}-%{release}
 Requires: imlib2-license = %{version}-%{release}
 BuildRequires : bzip2-dev
+BuildRequires : giflib-dev
 BuildRequires : libjpeg-turbo-dev
 BuildRequires : pkgconfig(freetype2)
 BuildRequires : pkgconfig(ice)
@@ -82,13 +83,14 @@ license components for the imlib2 package.
 
 %prep
 %setup -q -n imlib2-1.5.1
+cd %{_builddir}/imlib2-1.5.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568074182
+export SOURCE_DATE_EPOCH=1579641408
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -108,10 +110,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1568074182
+export SOURCE_DATE_EPOCH=1579641408
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/imlib2
-cp COPYING %{buildroot}/usr/share/package-licenses/imlib2/COPYING
+cp %{_builddir}/imlib2-1.5.1/COPYING %{buildroot}/usr/share/package-licenses/imlib2/4bb00a078e16718ff6547e7ec70b558a8dd3680a
 %make_install
 
 %files
@@ -169,6 +171,7 @@ cp COPYING %{buildroot}/usr/share/package-licenses/imlib2/COPYING
 /usr/lib64/imlib2/loaders/bmp.so
 /usr/lib64/imlib2/loaders/bz2.so
 /usr/lib64/imlib2/loaders/ff.so
+/usr/lib64/imlib2/loaders/gif.so
 /usr/lib64/imlib2/loaders/jpeg.so
 /usr/lib64/imlib2/loaders/lbm.so
 /usr/lib64/imlib2/loaders/png.so
@@ -181,4 +184,4 @@ cp COPYING %{buildroot}/usr/share/package-licenses/imlib2/COPYING
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/imlib2/COPYING
+/usr/share/package-licenses/imlib2/4bb00a078e16718ff6547e7ec70b558a8dd3680a

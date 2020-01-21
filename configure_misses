@@ -1,6 +1,4 @@
 Configure miss: whether to enable x86 mmx support
 Configure miss: TIFFReadScanline in -ltiff
 Configure miss: TIFFReadScanline in -ltiff34
-Configure miss: DGifOpenFileName in -lgif
-Configure miss: DGifOpenFileName in -lungif
 Configure miss: id3_file_open in -lid3tag
