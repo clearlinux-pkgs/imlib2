@@ -1,5 +1,2 @@
-1.5.1
-bzip2-dev
-pkgconfig(ice)
-pkgconfig(xext)
+1.7.1
 libjpeg-turbo-dev
