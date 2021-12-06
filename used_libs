@@ -9,4 +9,5 @@ libmvec.so.1
 libpng16.so.16
 libtiff.so.5
 libwebp.so.7
+libwebpdemux.so.2
 libz.so.1
