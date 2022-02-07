@@ -159,6 +159,7 @@ libImlib2.so.1:imlib_image_get_border
 libImlib2.so.1:imlib_image_get_data
 libImlib2.so.1:imlib_image_get_data_for_reading_only
 libImlib2.so.1:imlib_image_get_filename
+libImlib2.so.1:imlib_image_get_frame_info
 libImlib2.so.1:imlib_image_get_height
 libImlib2.so.1:imlib_image_get_width
 libImlib2.so.1:imlib_image_has_alpha
@@ -188,6 +189,7 @@ libImlib2.so.1:imlib_list_fonts
 libImlib2.so.1:imlib_load_font
 libImlib2.so.1:imlib_load_image
 libImlib2.so.1:imlib_load_image_fd
+libImlib2.so.1:imlib_load_image_frame
 libImlib2.so.1:imlib_load_image_immediately
 libImlib2.so.1:imlib_load_image_immediately_without_cache
 libImlib2.so.1:imlib_load_image_with_error_return
@@ -235,3 +237,4 @@ libImlib2.so.1:imlib_updates_init
 libImlib2.so.1:imlib_updates_merge
 libImlib2.so.1:imlib_updates_merge_for_rendering
 libImlib2.so.1:imlib_updates_set_coordinates
+libImlib2.so.1:imlib_version
