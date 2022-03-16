@@ -1,8 +1,8 @@
 libImlib2.so.1:__imlib_AllocateData
 libImlib2.so.1:__imlib_AttachTag
-libImlib2.so.1:__imlib_FindBestLoaderForFile
-libImlib2.so.1:__imlib_FindBestLoaderForFormat
+libImlib2.so.1:__imlib_FindBestLoader
 libImlib2.so.1:__imlib_FreeData
+libImlib2.so.1:__imlib_GetKey
 libImlib2.so.1:__imlib_GetTag
 libImlib2.so.1:__imlib_LoadEmbedded
 libImlib2.so.1:__imlib_LoadProgress
