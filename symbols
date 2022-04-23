@@ -192,6 +192,7 @@ libImlib2.so.1:imlib_load_image_fd
 libImlib2.so.1:imlib_load_image_frame
 libImlib2.so.1:imlib_load_image_immediately
 libImlib2.so.1:imlib_load_image_immediately_without_cache
+libImlib2.so.1:imlib_load_image_with_errno_return
 libImlib2.so.1:imlib_load_image_with_error_return
 libImlib2.so.1:imlib_load_image_without_cache
 libImlib2.so.1:imlib_modify_color_modifier_brightness
@@ -216,6 +217,7 @@ libImlib2.so.1:imlib_render_pixmaps_for_whole_image_at_size
 libImlib2.so.1:imlib_reset_color_modifier
 libImlib2.so.1:imlib_rotate_image_from_buffer
 libImlib2.so.1:imlib_save_image
+libImlib2.so.1:imlib_save_image_with_errno_return
 libImlib2.so.1:imlib_save_image_with_error_return
 libImlib2.so.1:imlib_set_cache_size
 libImlib2.so.1:imlib_set_color_modifier_tables
@@ -223,6 +225,7 @@ libImlib2.so.1:imlib_set_color_usage
 libImlib2.so.1:imlib_set_font_cache_size
 libImlib2.so.1:imlib_set_ximage_cache_count_max
 libImlib2.so.1:imlib_set_ximage_cache_size_max
+libImlib2.so.1:imlib_strerror
 libImlib2.so.1:imlib_text_draw
 libImlib2.so.1:imlib_text_draw_with_return_metrics
 libImlib2.so.1:imlib_text_get_index_and_location
