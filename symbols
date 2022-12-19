@@ -2,13 +2,14 @@ libImlib2.so.1:__imlib_AllocateData
 libImlib2.so.1:__imlib_AttachTag
 libImlib2.so.1:__imlib_FindBestLoader
 libImlib2.so.1:__imlib_FreeData
+libImlib2.so.1:__imlib_GetFrame
 libImlib2.so.1:__imlib_GetKey
 libImlib2.so.1:__imlib_GetTag
 libImlib2.so.1:__imlib_LoadEmbedded
+libImlib2.so.1:__imlib_LoadEmbeddedMem
 libImlib2.so.1:__imlib_LoadProgress
 libImlib2.so.1:__imlib_LoadProgressRows
 libImlib2.so.1:__imlib_LoadProgressSetPass
-libImlib2.so.1:__imlib_LoaderSetFormats
 libImlib2.so.1:__imlib_ReplaceData
 libImlib2.so.1:imlib_add_color_to_color_range
 libImlib2.so.1:imlib_add_path_to_font_path
@@ -116,6 +117,7 @@ libImlib2.so.1:imlib_get_cache_size
 libImlib2.so.1:imlib_get_cache_used
 libImlib2.so.1:imlib_get_color_modifier_tables
 libImlib2.so.1:imlib_get_color_usage
+libImlib2.so.1:imlib_get_error
 libImlib2.so.1:imlib_get_font_ascent
 libImlib2.so.1:imlib_get_font_cache_size
 libImlib2.so.1:imlib_get_font_descent
@@ -190,8 +192,10 @@ libImlib2.so.1:imlib_load_font
 libImlib2.so.1:imlib_load_image
 libImlib2.so.1:imlib_load_image_fd
 libImlib2.so.1:imlib_load_image_frame
+libImlib2.so.1:imlib_load_image_frame_mem
 libImlib2.so.1:imlib_load_image_immediately
 libImlib2.so.1:imlib_load_image_immediately_without_cache
+libImlib2.so.1:imlib_load_image_mem
 libImlib2.so.1:imlib_load_image_with_errno_return
 libImlib2.so.1:imlib_load_image_with_error_return
 libImlib2.so.1:imlib_load_image_without_cache
