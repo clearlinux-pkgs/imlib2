@@ -5,7 +5,7 @@
 #
 Name     : imlib2
 Version  : 1.11.1
-Release  : 26
+Release  : 27
 URL      : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.11.1/imlib2-1.11.1.tar.xz
 Source0  : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.11.1/imlib2-1.11.1.tar.xz
 Summary  : Powerful image loading and rendering library
@@ -85,13 +85,16 @@ license components for the imlib2 package.
 %prep
 %setup -q -n imlib2-1.11.1
 cd %{_builddir}/imlib2-1.11.1
+pushd ..
+cp -a imlib2-1.11.1 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683038228
+export SOURCE_DATE_EPOCH=1683038405
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -103,25 +106,50 @@ export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section
 %configure --disable-static
 make  %{?_smp_mflags}
 
+unset PKG_CONFIG_PATH
+pushd ../buildavx2/
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3"
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3"
+%configure --disable-static
+make  %{?_smp_mflags}
+popd
 %check
 export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
+cd ../buildavx2;
+make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1683038228
+export SOURCE_DATE_EPOCH=1683038405
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/imlib2
 cp %{_builddir}/imlib2-%{version}/COPYING %{buildroot}/usr/share/package-licenses/imlib2/4bb00a078e16718ff6547e7ec70b558a8dd3680a || :
+pushd ../buildavx2/
+%make_install_v3
+popd
 %make_install
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
 
 %files bin
 %defattr(-,root,root,-)
+/V3/usr/bin/imlib2_bumpmap
+/V3/usr/bin/imlib2_colorspace
+/V3/usr/bin/imlib2_conv
+/V3/usr/bin/imlib2_grab
+/V3/usr/bin/imlib2_load
+/V3/usr/bin/imlib2_poly
+/V3/usr/bin/imlib2_show
+/V3/usr/bin/imlib2_test
+/V3/usr/bin/imlib2_view
 /usr/bin/imlib2_bumpmap
 /usr/bin/imlib2_colorspace
 /usr/bin/imlib2_conv
@@ -160,6 +188,7 @@ cp %{_builddir}/imlib2-%{version}/COPYING %{buildroot}/usr/share/package-license
 
 %files dev
 %defattr(-,root,root,-)
+/V3/usr/lib64/libImlib2.so
 /usr/include/Imlib2.h
 /usr/include/Imlib2_Loader.h
 /usr/lib64/libImlib2.so
@@ -167,6 +196,27 @@ cp %{_builddir}/imlib2-%{version}/COPYING %{buildroot}/usr/share/package-license
 
 %files lib
 %defattr(-,root,root,-)
+/V3/usr/lib64/imlib2/filters/bumpmap.so
+/V3/usr/lib64/imlib2/filters/colormod.so
+/V3/usr/lib64/imlib2/filters/testfilter.so
+/V3/usr/lib64/imlib2/loaders/ani.so
+/V3/usr/lib64/imlib2/loaders/argb.so
+/V3/usr/lib64/imlib2/loaders/bmp.so
+/V3/usr/lib64/imlib2/loaders/bz2.so
+/V3/usr/lib64/imlib2/loaders/ff.so
+/V3/usr/lib64/imlib2/loaders/gif.so
+/V3/usr/lib64/imlib2/loaders/ico.so
+/V3/usr/lib64/imlib2/loaders/jpeg.so
+/V3/usr/lib64/imlib2/loaders/lbm.so
+/V3/usr/lib64/imlib2/loaders/png.so
+/V3/usr/lib64/imlib2/loaders/pnm.so
+/V3/usr/lib64/imlib2/loaders/svg.so
+/V3/usr/lib64/imlib2/loaders/tga.so
+/V3/usr/lib64/imlib2/loaders/xbm.so
+/V3/usr/lib64/imlib2/loaders/xpm.so
+/V3/usr/lib64/imlib2/loaders/zlib.so
+/V3/usr/lib64/libImlib2.so.1
+/V3/usr/lib64/libImlib2.so.1.11.1
 /usr/lib64/imlib2/filters/bumpmap.so
 /usr/lib64/imlib2/filters/colormod.so
 /usr/lib64/imlib2/filters/testfilter.so
