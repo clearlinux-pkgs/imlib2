@@ -5,7 +5,7 @@
 #
 Name     : imlib2
 Version  : 1.11.1
-Release  : 27
+Release  : 28
 URL      : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.11.1/imlib2-1.11.1.tar.xz
 Source0  : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.11.1/imlib2-1.11.1.tar.xz
 Summary  : Powerful image loading and rendering library
@@ -94,7 +94,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683038405
+export SOURCE_DATE_EPOCH=1685553219
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -126,7 +126,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1683038405
+export SOURCE_DATE_EPOCH=1685553219
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/imlib2
 cp %{_builddir}/imlib2-%{version}/COPYING %{buildroot}/usr/share/package-licenses/imlib2/4bb00a078e16718ff6547e7ec70b558a8dd3680a || :
@@ -188,7 +188,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libImlib2.so
 /usr/include/Imlib2.h
 /usr/include/Imlib2_Loader.h
 /usr/lib64/libImlib2.so
@@ -215,7 +214,6 @@ popd
 /V3/usr/lib64/imlib2/loaders/xbm.so
 /V3/usr/lib64/imlib2/loaders/xpm.so
 /V3/usr/lib64/imlib2/loaders/zlib.so
-/V3/usr/lib64/libImlib2.so.1
 /V3/usr/lib64/libImlib2.so.1.11.1
 /usr/lib64/imlib2/filters/bumpmap.so
 /usr/lib64/imlib2/filters/colormod.so

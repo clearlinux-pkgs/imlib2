@@ -1,12 +1,24 @@
 Configure miss: HEIF
+Configure miss: HEIF
+Configure miss: ID3
 Configure miss: ID3
 Configure miss: J2K
+Configure miss: J2K
+Configure miss: JXL
 Configure miss: JXL
 Configure miss: LZMA
+Configure miss: LZMA
+Configure miss: PS
 Configure miss: PS
 Configure miss: TIFF
+Configure miss: TIFF
+Configure miss: WEBP
 Configure miss: WEBP
 Configure miss: Y4M
+Configure miss: Y4M
+Configure miss: g++ option to enable C++11 features
 Configure miss: g++ option to enable C++11 features
 Configure miss: whether to enable x86 mmx support
+Configure miss: whether to enable x86 mmx support
+Configure miss: x86_64-generic-linux-gnu-file
 Configure miss: x86_64-generic-linux-gnu-file
