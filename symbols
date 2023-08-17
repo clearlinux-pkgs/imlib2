@@ -11,6 +11,7 @@ libImlib2.so.1:__imlib_LoadProgress
 libImlib2.so.1:__imlib_LoadProgressRows
 libImlib2.so.1:__imlib_LoadProgressSetPass
 libImlib2.so.1:__imlib_ReplaceData
+libImlib2.so.1:__imlib_perror
 libImlib2.so.1:imlib_add_color_to_color_range
 libImlib2.so.1:imlib_add_path_to_font_path
 libImlib2.so.1:imlib_apply_color_modifier
@@ -140,6 +141,7 @@ libImlib2.so.1:imlib_image_clear_color
 libImlib2.so.1:imlib_image_copy_alpha_rectangle_to_image
 libImlib2.so.1:imlib_image_copy_alpha_to_image
 libImlib2.so.1:imlib_image_copy_rect
+libImlib2.so.1:imlib_image_decache_file
 libImlib2.so.1:imlib_image_draw_ellipse
 libImlib2.so.1:imlib_image_draw_line
 libImlib2.so.1:imlib_image_draw_pixel
