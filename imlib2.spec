@@ -4,10 +4,10 @@
 # Using build pattern: configure
 #
 Name     : imlib2
-Version  : 1.12.0
-Release  : 29
-URL      : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.12.0/imlib2-1.12.0.tar.xz
-Source0  : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.12.0/imlib2-1.12.0.tar.xz
+Version  : 1.12.1
+Release  : 30
+URL      : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.12.1/imlib2-1.12.1.tar.xz
+Source0  : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.12.1/imlib2-1.12.1.tar.xz
 Summary  : Powerful image loading and rendering library
 Group    : Development/Tools
 License  : Imlib2
@@ -29,7 +29,7 @@ BuildRequires : pkgconfig(xcb-shm)
 %define debug_package %{nil}
 
 %description
-Imlib2 1.12.0
+Imlib2 1.12.1
 This is the Imlib 2 library - a library that does image file loading and
 saving as well as rendering, manipulation, arbitrary polygon support, etc.
 
@@ -83,10 +83,10 @@ license components for the imlib2 package.
 
 
 %prep
-%setup -q -n imlib2-1.12.0
-cd %{_builddir}/imlib2-1.12.0
+%setup -q -n imlib2-1.12.1
+cd %{_builddir}/imlib2-1.12.1
 pushd ..
-cp -a imlib2-1.12.0 buildavx2
+cp -a imlib2-1.12.1 buildavx2
 popd
 
 %build
@@ -94,7 +94,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1692294545
+export SOURCE_DATE_EPOCH=1695392924
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -126,7 +126,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1692294545
+export SOURCE_DATE_EPOCH=1695392924
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/imlib2
 cp %{_builddir}/imlib2-%{version}/COPYING %{buildroot}/usr/share/package-licenses/imlib2/4bb00a078e16718ff6547e7ec70b558a8dd3680a || :
@@ -215,7 +215,7 @@ popd
 /V3/usr/lib64/imlib2/loaders/xbm.so
 /V3/usr/lib64/imlib2/loaders/xpm.so
 /V3/usr/lib64/imlib2/loaders/zlib.so
-/V3/usr/lib64/libImlib2.so.1.12.0
+/V3/usr/lib64/libImlib2.so.1.12.1
 /usr/lib64/imlib2/filters/bumpmap.so
 /usr/lib64/imlib2/filters/colormod.so
 /usr/lib64/imlib2/filters/testfilter.so
@@ -237,7 +237,7 @@ popd
 /usr/lib64/imlib2/loaders/xpm.so
 /usr/lib64/imlib2/loaders/zlib.so
 /usr/lib64/libImlib2.so.1
-/usr/lib64/libImlib2.so.1.12.0
+/usr/lib64/libImlib2.so.1.12.1
 
 %files license
 %defattr(0644,root,root,0755)
