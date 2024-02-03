@@ -1,14 +1,10 @@
 libX11.so.6
 libbz2.so.1.0
 libc.so.6
-libcairo.so.2
 libfreetype.so.6
 libgif.so.7
-libglib-2.0.so.0
-libgobject-2.0.so.0
-libjpeg.so.62
+liblzma.so.5
 libm.so.6
 libmvec.so.1
 libpng16.so.16
-librsvg-2.so.2
 libz.so.1
