@@ -4,3 +4,5 @@ giflib-dev
 libjpeg-turbo-dev
 libwebp-dev
 libpng-dev
+librsvg-dev
+tiff-dev

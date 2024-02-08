@@ -7,7 +7,7 @@
 #
 Name     : imlib2
 Version  : 1.12.2
-Release  : 33
+Release  : 34
 URL      : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.12.2/imlib2-1.12.2.tar.xz
 Source0  : https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.12.2/imlib2-1.12.2.tar.xz
 Summary  : Powerful image loading and rendering library
@@ -21,6 +21,7 @@ BuildRequires : buildreq-configure
 BuildRequires : giflib-dev
 BuildRequires : libjpeg-turbo-dev
 BuildRequires : libpng-dev
+BuildRequires : librsvg-dev
 BuildRequires : libwebp-dev
 BuildRequires : pkgconfig(freetype2)
 BuildRequires : pkgconfig(x11)
@@ -98,7 +99,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1707404710
+export SOURCE_DATE_EPOCH=1707404853
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -152,7 +153,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1707404710
+export SOURCE_DATE_EPOCH=1707404853
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/imlib2
 cp %{_builddir}/imlib2-%{version}/COPYING %{buildroot}/usr/share/package-licenses/imlib2/4bb00a078e16718ff6547e7ec70b558a8dd3680a || :
@@ -240,6 +241,7 @@ GOAMD64=v2
 /V3/usr/lib64/imlib2/loaders/png.so
 /V3/usr/lib64/imlib2/loaders/pnm.so
 /V3/usr/lib64/imlib2/loaders/qoi.so
+/V3/usr/lib64/imlib2/loaders/svg.so
 /V3/usr/lib64/imlib2/loaders/tga.so
 /V3/usr/lib64/imlib2/loaders/webp.so
 /V3/usr/lib64/imlib2/loaders/xbm.so
@@ -262,6 +264,7 @@ GOAMD64=v2
 /usr/lib64/imlib2/loaders/png.so
 /usr/lib64/imlib2/loaders/pnm.so
 /usr/lib64/imlib2/loaders/qoi.so
+/usr/lib64/imlib2/loaders/svg.so
 /usr/lib64/imlib2/loaders/tga.so
 /usr/lib64/imlib2/loaders/webp.so
 /usr/lib64/imlib2/loaders/xbm.so
