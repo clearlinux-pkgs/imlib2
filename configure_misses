@@ -4,10 +4,20 @@ Configure miss: id3tag
 Configure miss: id3tag
 Configure miss: libheif
 Configure miss: libheif
-Configure miss: libjpeg
+Configure miss: libjxl libjxl_threads
+Configure miss: libjxl libjxl_threads
+Configure miss: liblzma
+Configure miss: liblzma
+Configure miss: libopenjp2
+Configure miss: libopenjp2
+Configure miss: libraw
 Configure miss: libraw
 Configure miss: libspectre
 Configure miss: libspectre
+Configure miss: libtiff-4
+Configure miss: libtiff-4
+Configure miss: libyuv
+Configure miss: libyuv
 Configure miss: struct stat.st_mtimespec.tv_nsec
 Configure miss: struct stat.st_mtimespec.tv_nsec
 Configure miss: whether to enable x86 mmx support
