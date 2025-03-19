@@ -2,9 +2,10 @@ Configure miss: g++ option to enable C++11 features
 Configure miss: g++ option to enable C++11 features
 Configure miss: id3tag
 Configure miss: id3tag
+Configure miss: libavif
+Configure miss: libavif
 Configure miss: libheif
 Configure miss: libheif
-Configure miss: libjxl libjxl_threads
 Configure miss: libjxl libjxl_threads
 Configure miss: liblzma
 Configure miss: liblzma
